@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace LinkedListProblems
 {
@@ -89,6 +88,23 @@ namespace LinkedListProblems
                 Console.WriteLine("LinkedList is empty");
             }
             this.head = this.head.next;
+        }
+        public void RemoveLastNode()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+            }
+            if (head.next == null)
+            {
+                head = null;
+            }
+            Node NewNode = head;
+            while (NewNode.next.next != null)
+            {
+                NewNode = NewNode.next;
+            }
+            NewNode.next = null;
         }
     }
 }
